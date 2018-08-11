@@ -5,7 +5,7 @@
 /* FONT PATH
  * -------------------------- */
 @font-face {
-  font-family: "Microsoft JhengHei", "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif
+  font-family: "Microsoft JhengHei", "Segoe UI Semibold", "Segoe UI", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
   src: url('../Microsoft JhengHei.ttf');
   /*font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.6.3');
@@ -13,6 +13,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
+p,h1,h2,h3,h4,h5,h6,a { font-family: "Microsoft JhengHei" }
+
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 Microsoft JhengHei;
