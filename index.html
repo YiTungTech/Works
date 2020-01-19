@@ -1,760 +1,180 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html lang="zh-Hant-TW" amp>
+<!doctype html>
+<html lang="en">
+
 <head>
-<title>宜動科技-APP開發</title> 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
-<meta http-equiv="Content-Type" content="text/html" />
-<meta charset="UTF-8" />
-<meta name="keywords" content="宜動科技,YiTungTech,Android,iOS,高雄APP,APP開發" />
-<!-- <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
-
-<!-- Custom Theme files -->
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
-<link href="css/font-awesome.css" rel="stylesheet">   <!-- font-awesome icons --> 
-<link rel="stylesheet" href="css/jquery.gallery.css">
-<link rel="canonical" href="https://yitungtech.com.tw/index.html" />
-<!-- //Custom Theme files -->
-
-<!-- Google AMP設定 --> 
-<style amp-custom>
-</style>
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<!-- Google AMP設定 -->
-
-
-<!-- js -->
-<script src="js/jquery-2.2.3.min.js"></script> 
-<!-- //js -->
-<!-- web-fonts --> 
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Upright:300,400,500,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-<!-- //web-fonts --> 
-<link rel="Shortcut Icon" type="image/x-icon" href="images/icon/icon_shortcut.png" />
-<!-- Google AMP設定 --> 
-<script async src="https://cdn.ampproject.org/v0.js"></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Jekyll v3.8.6">
+<title>宜動科技-網站/APP</title>
+<link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="css/common.css" type="text/css" rel="stylesheet" media="all">
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="images/icon/icon_shortcut.png" />
+<meta name="theme-color" content="#563d7c">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+  
+  <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+    .card * {
+      min-height: .01px;
+    }
+  </style>
+  <!-- Custom styles for tg-his template -->
+  <link href="album.css" rel="stylesheet">
 </head>
-<body> 
 
-	<!-- 上方logo，移除background -->
-	<div class="w3ls-banner_nobg">
-		<div class="w3lsbanner-info">
-			<div class="header">
-				<div class="container">
-					<div class="header-center">
-						<amp-img src="images/icon/logo.jpg" height="64" width="213"/>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+<body>
+  <header>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <img src="images/icon/icon_shortcut.png" style="width: 35px;">
+          <strong>宜動科技</strong>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main role="main" class="test123 bg-light">
+    <img class="img-fluid" src="images/home_banner.jpg">
+    <div class="text-center">
+        <p>
+          <a href="#production" class="btn btn-primary my-2">合作對象</a>
+          <a href="#footer" class="btn btn-primary my-2">聯絡我們</a>
+        </p>
+    </div>
+    <div id="production" class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
 
-	<!-- banner -->
-	<div class="w3ls-banner">
-		<div class="w3lsbanner-info">
-			<div class="header">
-				<div class="container">
-					<div class="header-left">
-						<div class="w3layouts-logo">
-							<h1>
-								<!-- <a href="index.html">宜動科技有限公司 YiTung Technology</a> -->
-								
-							</h1>
-						</div>
-					</div>
-					<div class="header-right">
-						<div class="agileinfo-social-grids">
-							<ul>
-								<!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								<li><a href="#"><i class="fa fa-vk"></i></a></li> -->
-							</ul>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <a href="case/ouk/index.html">
+                <img class="d-block w-100" src="case/ouk/images/banner.png">
+                <title>高雄市立空中大學</title>
+                <rect width="100%" height="100%" fill="#55595c" />
+                <div class="card-header">
+                  <span class="badge badge-primary">APP</span>
+                  <span class="badge badge-primary">管理後台</span>
+                  <h4 class="card-text">高雄市立空中大學</h4>
+                </div>
+              </a>
 
-			<!-- tab標籤按鈕 -->
-			<!-- <div class="header-bottom">
-				<div class="container">
-					<div class="top-nav">
-						<nav class="navbar navbar-default">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav">
-									<li><a class="active list-border" href="index.html">Home</a></li>
-									<li><a href="#services" class="scroll">提供服務</a></li> 
-									<li><a href="#about" class="scroll">合作對象</a></li> 
-									<li><a href="#address" class="scroll">聯絡我</a></li>
-								</ul>	
-								<div class="clearfix"> </div>
-							</div>	
-						</nav>		
-					</div>
-				</div>
-			</div> -->
+              <div class="card-body">
+                <ul class="list-unstyled">
+                  <ul>
+                    <li>新版面設計</li>
+                    <li>支援大量推播</li>
+                    <li style="color: red;">通過行動應用App基本資安檢測v3.0</li>
+                  </ul>
+                  </li>
+                </ul>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="javascript:location.href='case/ouk/index.html'">更多</button>
+                  </div>
+                  <small class="text-muted">2019 . 12</small>
+                </div>
+              </div>
+            </div>
+          </div>
 
-			
-			<div class="w3layouts-banner-info">
-				<div class="container">
-					<div class="w3layouts-banner-slider">
-						<div class="w3layouts-banner-top-slider">
-							<div class="slider">
-								<div class="callbacks_container">
-									<ul class="rslides callbacks callbacks1" id="slider4">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <a href="case/kinnem/index.html">
+                <img class="d-block w-100" src="case/kinnem/images/banner.png">
+                <title>金門航空站</title>
+                <rect width="100%" height="100%" fill="#55595c" />
+                <div class="card-header">
+                  <span class="badge badge-primary">APP</span>
+                  <h4 class="card-text">金門航空站</h4>
+                </div>
+              </a>
 
-										<li>
-											<div class="w3ls-text">
-												<h2>Android/iOS 應用程式開發</h2>
-												<!-- <div class="w3ls-text-info">
-													<h2>APP開發</h2>
-													<h3>技術諮詢，解決方案</h3>
-													<h3>專業態度，最好服務</h3>
-												</div> -->
-											</div>
-										</li>
-										<!-- viewpager，banner可向右切頁 -->
-										<!-- <li>
-											<div class="w3ls-text">
-												<div class="w3ls-text-info">
-													<h2>Customized Solutions</h2>
-												</div>
-											</div>
-										</li> -->
-									</ul>
-								</div>
-								<div class="clearfix"> </div>
-								<script src="js/responsiveslides.min.js"></script>
-								<script>
-									// You can also use "$(window).load(function() {"
-									$(function () {
-									  // Slideshow 4
-									  $("#slider4").responsiveSlides({
-										auto: true,
-										pager:true,
-										nav:true,
-										speed: 500,
-										namespace: "callbacks",
-										before: function () {
-										  $('.news').append("<li>before event fired.</li>");
-										},
-										after: function () {
-										  $('.news').append("<li>after event fired.</li>");
-										}
-									  });
-								
-									});
-								 </script>
-								<!--banner Slider starts Here-->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> 
-		</div>
-	</div>
-	<!-- //banner -->
-	
-	<!-- Stats -->
-	<!-- <div class="stats">  
-		<div class="stats-info agileits-w3layouts">
-			<div class="col-sm-3 col-xs-6 stats-grid w3lgrid1">
-				<div class="stats-img">
-					<i class="fa fa-users" aria-hidden="true"></i>
-				</div>
-				<h5>Happy Clients</h5>
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='157000' data-delay='.5' data-increment="100">157000</div>
-			</div>
-			<div class="col-sm-3 col-xs-6 stats-grid w3lgrid2">
-				<div class="stats-img w3-agileits">
-					<i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-				</div>
-				<h5>Our news</h5>
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='850' data-delay='8' data-increment="1">850</div>
-			</div>
-			<div class="col-sm-3 col-xs-6 stats-grid w3lgrid3">
-				<div class="stats-img w3-agileits">
-					<i class="fa fa-briefcase" aria-hidden="true"></i>
-				</div>	
-				<h5>Projects</h5> 
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='80000' data-delay='.5' data-increment="100">80000</div>
-			</div>
-			<div class="col-sm-3 col-xs-6 stats-grid w3lgrid4">
-				<div class="stats-img w3-agileits">
-					<i class="fa fa-trophy" aria-hidden="true"></i>
-				</div>
-				<h5>Awards</h5>
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='269' data-delay='8' data-increment="1">269</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>  
-	</div> -->
-	<!-- //Stats -->   
-	<!-- services --> 
-	<div id="services" class="services"> 
-		<div class="container">   
-			<div class="agileits-title">
-				<h3>提供的服務</h3>
-				<!-- <p>Aliquam maximus cras cursus, nunc sit amet </p> -->
-			</div>
-			<div class="services-agileinfo"> 
-				<div class="col-sm-3 col-xs-6 services-w3grids"> 
-					<h5>行動支付</h5>
-					<h6>QRCode支付</h6>
-					<h6>HCE信用卡</h6>
-					<h6>NFC交通卡</h6>
-					<h6>智慧紅利集點</h6>
+              <div class="card-body">
+                <ul class="list-unstyled">
+                  <ul>
+                    <li>即時顯示航班資訊</li>
+                    <li>串接候補系統</li>
+                    <li style="color: red;">通過行動應用App基本資安檢測v2.1</li>
+                  </ul>
+                  </li>
+                </ul>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="javascript:location.href='case/kinnem/index.html'">更多</button>
+                  </div>
+                  <small class="text-muted">2018 . 12</small>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				</div> 
-				<div class="col-sm-3 col-xs-6 services-w3grids"> 
-					<h5>資訊安全</h5>
-					<h6>Fortify</h6>
-					<h6>Checkmarx</h6>
-					<h6>經濟部工業局「行動應用App基本資安檢測」</h6>
-				</div>
-				<div class="col-sm-3 col-xs-6 services-w3grids"> 
-					<h5>客製化</h5>
-					<h6>影音串流</h6>
-					<h6>會員廣告行銷</h6>
-					<h6>既有系統導入</h6>
-					<h6>VoIP網路視訊電話</h6>
-				</div>
-				<div class="col-sm-3 col-xs-6 services-w3grids"> 
-					<h5>技術諮詢</h5>
-					<h6>產品與技術支援</h6>
-					<h6>產品保固</h6>
-					<h6>APP維護升級</h6>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div> 
-	</div> 
-	<!-- //services -->  
-	<!-- about -->
-	<div id="about" class="about">
-		<div class="container">
-			<div class="agileits-title">
-				<h3>合作對象</h3>
-				<!-- <p>Cras cursus, nunc sit amet aliquam maximus</p> -->
-			</div>
-			<div class="w3l-about-grids" style="margin-left: 20px;">
-				<div class="col-md-6 w3ls-about-right" >
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/icon1.png" height="50" width="50">
-						</div>
+          
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <a href="case/apps/index.html">
+                <img class="d-block w-100" src="case/apps/images/banner.png">
+                <title>APP作品集</title>
+                <rect width="100%" height="100%" fill="#55595c" />
+                <div class="card-header">
+                  <span class="badge badge-primary">APP作品集</span>
+                  <h4 class="card-text">APP作品集</h4>
+                </div>
+              </a>
 
-						<div class="icon-right">
-							<br>
-							<h5>高雄東區稅捐處</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/icon2.png" height="50" width="50">
-						</div>
+              <div class="card-body">
+                <ul class="list-unstyled">
+                  <ul>
+                    <li>高雄市政府工務局</li>
+                    <li>高雄稅捐稽徵處、南投稅捐處、台東稅捐處、屏東稅務局</li>
+                    <li>金門航空站、馬公航空站</li>
+                  </ul>
+                  </li>
+                </ul>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="javascript:location.href='case/apps/index.html'">更多</button>
+                  </div>
+                  <small class="text-muted">~2018 . 08</small>
+                </div>
+              </div>
+            </div>
+          </div>
 
-						<div class="icon-right">
-							<br>
-							<h5>南投稅捐處</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/icon3.png" height="50" width="50">
-						</div>
 
-						<div class="icon-right">
-							<br>
-							<h5>金門航空站</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<br><br>
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/icon4.png" height="50" width="50">
-						</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer" class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      
+      <p>聯絡我? 任何疑問歡迎提出!</p>
+      <p><img src="images/icon/icon_phone.png?" width="22" height="22"><a href="tel:075528429">　(07) 552-8429</a></p>
+      <p><img src="images/icon/icon_fax.png?" width="22" height="22"><a href="">　(07) 552-1908</a></p>
+      <p><img src="images/icon/icon_email.png?" width="22" height="22"><a href="mailto:service@yitungtech.com.tw">　service@yitungtech.com.tw</a></p>
 
-						<div class="icon-right">
-							<br>
-							<h5>馬公航空站</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-
-				</div>
-
-				<div class="col-md-6 w3ls-about-left">
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/iconA.png" height="50" width="50">
-						</div>
-
-						<div class="icon-right">
-							<br>
-							<h5>台東稅捐處</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/iconB.png" height="50" width="50">
-						</div>
-						<div class="icon-right">
-							<br>
-							<h5>屏東稅務局</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/iconC.png" height="50" width="50">
-						</div>
-						<div class="icon-right">
-							<br>
-							<h5>高雄東區稅捐電子書</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-
-					<br><br>
-					<div class="agileits-icon-grid">
-						<div class="icon-left">
-							<amp-img src="images/icon/iconD.png" height="50" width="50">
-						</div>
-						<div class="icon-right">
-							<br>
-							<h5>高雄市政府</h5>
-							<h5>i高雄無障礙行動服務</h5>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div> 
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //about -->
-	<!-- team -->
-	<!-- <div id="team" class="jarallax team">
-		<div class="team-dot">
-			<div class="container"> 
-				<div class="agileits-title w3title1">
-					<h3>Our Team</h3>
-					<p>Aliquam maximus cras cursus, nunc sit amet </p>
-				</div>
-				<div class="agileits-team-grids">
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t1.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Peter Parker</h4>
-								<p>Fusce laoreet</p>
-								<div class="agileinfo-social-grids">
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-rss"></i></a></li> 
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t2.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Johan Botha</h4>
-								<p>Fusce laoreet</p>
-								<div class="agileinfo-social-grids">
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-rss"></i></a></li> 
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t3.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Justo Congue</h4>
-								<p>Fusce laoreet</p>
-								<div class="agileinfo-social-grids">
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-rss"></i></a></li> 
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t4.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Steven Wilson</h4>
-								<p>Fusce laoreet</p>
-								<div class="agileinfo-social-grids">
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-rss"></i></a></li> 
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- //team -->
-	<!-- news -->
-	<!-- <div id="news" class="w3-news"> 
-		<div class="container"> 
-			<div class="agileits-title">
-				<h3>Latest News</h3>
-				<p>Aliquam maximus cras cursus, nunc sit amet </p>
-			</div>
-			<div class="news-info">
-				<div class="col-md-6 event-grids">
-					<div class="w3layouts-text">
-						<h4>10<span>Nov</span></h4>
-						<h6><a href="#" data-toggle="modal" data-target="#myModal">Nulla tellus exquis</a></h6>
-						<div class="clearfix"> </div>
-					</div>
-					<p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades goertayse.nikertyade asetkertyptaiades goertayse</p>
-				</div>
-				<div class="col-md-6 event-grids">
-					<div class="w3layouts-text">
-						<h4>20<span>Dec</span></h4>
-						<h6><a href="#" data-toggle="modal" data-target="#myModal">Mauris vehicula vel</a></h6>
-						<div class="clearfix"> </div>
-					</div>
-					<p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades goertayse.nikertyade asetkertyptaiades goertayse</p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="news-info news-agileinfo2">
-				<div class="col-md-6 event-grids">
-					<div class="w3layouts-text">
-						<h4>05<span>Jan</span></h4>
-						<h6><a href="#" data-toggle="modal" data-target="#myModal">Nulla tellus exquis</a></h6>
-						<div class="clearfix"> </div>
-					</div>
-					<p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades goertayse.nikertyade asetkertyptaiades goertayse</p>
-				</div>
-				<div class="col-md-6 event-grids">
-					<div class="w3layouts-text">
-						<h4>18<span>Feb</span></h4>
-						<h6><a href="#" data-toggle="modal" data-target="#myModal">Mauris vehicula vel</a></h6>
-						<div class="clearfix"> </div>
-					</div>
-					<p>Kasertas lertyasea deeraeser miasera lertasa ritise doloert ferdas caplicabo nerafaes asety u lasec vaserat. nikertyade asetkertyptaiades goertayse.nikertyade asetkertyptaiades goertayse</p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div> 
-	</div>  -->
-	<!-- //news -->
-	<!-- modal -->
-	<!-- <div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header"> 
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-					<h4 class="modal-title">Exploit creative agency</h4>
-				</div> 
-				<div class="modal-body">
-					<div class="agileits-w3layouts-info">
-						<img src="images/1.jpg" alt="" />
-						<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- //modal -->
-	<!-- gallery -->
-	<!-- <div id="gallery" class="gallery">
-		<div class="container"> 
-			<div class="agileits-title">
-				<h3>Gallery</h3>
-				<p>Suspendisse bibendum ex sit amet tellus</p> 
-			</div>
-		</div> 
-		<div class="w3_agile_gallery_grids">
-			<div class="col-sm-4 col-xs-6 agile_gallery_grid"> 
-				<div class="w3_agileits_gallery_grid">
-					<a href="images/g1.jpg" >
-						<div class="view effect">
-							<img src="images/g1.jpg" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>Exploit</h4>
-							</div>
-						</div> 
-					</a>
-				</div>
-			</div> 
-			<div class="col-sm-4 col-xs-6 agile_gallery_grid">
-				<div class="w3_agileits_gallery_grid">
-					<a href="images/g2.jpg" >
-						<div class="view effect">
-							<img src="images/g2.jpg" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>Exploit</h4>
-							</div>
-						</div> 
-					</a>
-				</div> 
-			</div>
-			<div class="col-sm-4 col-xs-6 agile_gallery_grid">
-				<div class="w3_agileits_gallery_grid">
-					<a href="images/g3.jpg" >
-						<div class="view effect">
-							<img src="images/g3.jpg" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>Exploit</h4>
-							</div>
-						</div> 
-					</a>
-				</div> 
-			</div>
-			<div class="col-sm-4 col-xs-6 agile_gallery_grid"> 
-				<div class="w3_agileits_gallery_grid">
-					<a href="images/g4.jpg" >
-						<div class="view effect">
-							<img src="images/g4.jpg" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>Exploit</h4>
-							</div>
-						</div> 
-					</a>
-				</div>
-			</div>
-			<div class="col-sm-4 col-xs-6 agile_gallery_grid"> 
-				<div class="w3_agileits_gallery_grid">
-					<a href="images/g5.jpg" >
-						<div class="view effect">
-							<img src="images/g5.jpg" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>Exploit</h4>
-							</div>
-						</div> 
-					</a>
-				</div>
-			</div>
-			<div class="col-sm-4 col-xs-6 agile_gallery_grid"> 
-				<div class="w3_agileits_gallery_grid">
-					<a href="images/g6.jpg" >
-						<div class="view effect">
-							<img src="images/g6.jpg" alt=" " class="img-responsive" />
-							<div class="mask"></div>
-							<div class="content">
-								<h4>Exploit</h4>
-							</div>
-						</div> 
-					</a>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<script type="text/javascript"  src="js/jquery.gallery.js" ></script>
-		<script>
-			$(function() {
-				$('.w3_agile_gallery_grids').createSimpleImgGallery();
-			});
-		</script>
-	</div> -->
-	<!-- //gallery --> 
-	<!-- map -->
-	<!-- <div class="map w3layouts">  
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"></iframe>
-	</div> -->
-	<!-- //map -->  
-	<!-- address -->
-	<div id="address" class="address">
-		<div class="container">  
-			<div class="address-grids">
-				<div class="col-md-6 address-left">
-					<h5>聯絡我?</h5>
-					<p>有任何疑問，歡迎提出問題。</p>
-				</div>
-				<div class="col-md-6 address-right">
-					<div class="address-w3grids">
-						<div class="col-xs-2 contact-grdl">
-							<!-- <span class="glyphicon glyphicon-send" aria-hidden="true"></span> -->
-							<amp-img src="images/icon/icon_phone.png" width="22" height="22">
-						</div>
-						<div class="col-xs-10 contact-grdr">
-							<a href="tel:075528429"><p>(07) 552-8429</p></a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					
-					<div class="address-w3grids">
-						<div class="col-xs-2 contact-grdl">
-							<!-- <span class="glyphicon glyphicon-send" aria-hidden="true"></span> -->
-							<amp-img src="images/icon/icon_fax.png" width="22" height="22">
-						</div>
-						<div class="col-xs-10 contact-grdr">
-							<p>(07) 552-1908</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					
-					<div class="address-w3grids">
-						<div class="col-xs-2 contact-grdl">
-							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 contact-grdr">
-							<p><a href="mailto:service@yitungtech.com.tw">service@yitungtech.com.tw</a></p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<br/>
-
-					
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //address -->
-	<!-- contact -->
-	<!-- <div id="contact" class="contact agileits">
-		<div class="container">  
-			<div class="agileits-title">
-				<h3>E-MAIL</h3>
-				
-			</div>
-			<div class="contact-agileinfo contact-form wthree"> 
-				<form action="#" method="post">
-					<input type="text" name="Name" placeholder="Name" required="">
-					<input class="email" type="email" name="Email" placeholder="Email" required="">
-					<input type="text" name="Number" placeholder="Phone Number" required="">
-					<textarea placeholder="Message" name="Message" required=""></textarea>
-					<input type="submit" value="SUBMIT">
-				</form>  
-			</div>
-		</div>
-	</div> -->
-	<!-- //contact --> 
-	<!-- footer -->
-	<!-- <div class="footer">
-		<div class="container">
-			<div class="col-md-4 agileinfo_footer_grid">
-				<h3>Subscribe</h3>
-				<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<form action="#" method="post">
-					<input type="email" name="Email" placeholder="Email" required="">
-					<input type="submit" value="Send">
-				</form>
-			</div>
-			<div class="col-md-4 agileinfo_footer_grid">
-				<h3>Twitter Posts</h3>
-				<ul class="w3agile_footer_grid_list">
-					<li>Ut aut reiciendis voluptatibus maiores <a href="#">http://lkjdds.ewr.com</a> alias, ut aut reiciendis.
-						<span><i class="fa fa-twitter" aria-hidden="true"></i>02 days ago</span></li>
-					<li>Itaque earum rerum hic tenetur a sapiente delectus <a href="#">http://uiubajaj.com</a> ut aut
-						voluptatibus.<span><i class="fa fa-twitter" aria-hidden="true"></i>03 days ago</span></li>
-				</ul>
-			</div>
-			<div class="col-md-4 agileinfo_footer_grid">
-				<h3>Social Media</h3> 
-				<div class="agileinfo-social-grids footer-w3icons">
-					<ul>
-						<li><a href="#"><i class="fa fa-facebook"></i>-  Facebook</a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i>- Twitter</a></li>
-						<li><a href="#"><i class="fa fa-rss"></i> - RSS</a></li>
-						<li><a href="#"><i class="fa fa-vk"></i>- VK</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- //footer -->
-	<!-- copy-right -->
-	<div class="w3agile_copy_right">
-		<div class="container">
-			 <p>© 2018 YITUNG tec. All Rights Reserved Design by <a href="https://w3layouts.com/">W3layouts</a></p>
-		</div>
-	</div>
-	<!-- //copy-right --> 
-	<!-- jarallax -->  
-	<script src="js/SmoothScroll.min.js"></script> 
-	<script src="js/jarallax.js"></script> 
-	<script type="text/javascript">
-		/* init Jarallax */
-		$('.jarallax').jarallax({
-			speed: 0.5,
-			imgWidth: 1366,
-			imgHeight: 768
-		})
-	</script>  
-	<!-- //jarallax -->  
-	<!-- start-smooth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>	
-	<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-			
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-	</script>
-	<!-- //end-smooth-scrolling -->	
-	<!-- smooth-scrolling-of-move-up -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
-			
-			$().UItoTop({ easingType: 'easeOutQuart' });
-			
-		});
-	</script>
-	<!-- //smooth-scrolling-of-move-up -->  
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+      
+      <p>© 2020 宜動科技有限公司.</p>  
+    </div>
+  </footer>
+  
 </body>
+
 </html>
