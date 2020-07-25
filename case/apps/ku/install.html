@@ -1,9 +1,53 @@
 <html>
-    <title>***** Ku App *****</title>
-<!--     <h1><a href="itms-services://?action=download-manifest&url=https://yitungtech.com.tw/case/apps/ku/manifest339.plist">Install App 339</a></h1> -->
-    <br><br>
-    <h1><a href="itms-services://?action=download-manifest&url=https://yitungtech.com.tw/case/apps/ku/manifest353.plist">Install App 353 com.ku.youa.ipa</a></h1>
-    <br><br>
-    <h1><a href="itms-services://?action=download-manifest&url=https://yitungtech.com.tw/case/apps/ku/manifest368.plist">Install App 368 com.ku.youa.ipa
-</a></h1>
+
+	<head>
+	    <title>***** Ku App *****</title>
+	    <script src="dist/clipboard.min.js"></script>
+	</head>
+
+
+
+	<body>
+		<!--     <h1><a href="itms-services://?action=download-manifest&url=https://yitungtech.com.tw/case/apps/ku/manifest339.plist">Install App 339</a></h1> -->
+		<br>
+		<br>
+		<h1>
+			<a href="itms-services://?action=download-manifest&url=https://yitungtech.com.tw/case/apps/ku/manifest353.plist">Install App 353 com.ku.youa.ipa</a>
+		</h1>
+		<br>
+		<br>
+		<h1>
+			<a href="itms-services://?action=download-manifest&url=https://yitungtech.com.tw/case/apps/ku/manifest368.plist">Install App 368 com.ku.youa.ipa
+		    </a>
+		</h1>
+		<br>
+		<br>
+		<h1>
+			<a class="btn" href="javascript:void(0);" onclick="onClickLink(this);">test copy</a>
+		</h1>
+	</body>
+
+	<script type="text/javascript">
+		var clipboard = new ClipboardJS('.btn', {
+	        text: function() {
+	            return 'to be or not to be. 3333';
+	        }
+	    });
+
+	    clipboard.on('success', function(e) {
+	        console.log(e);
+	        // window.location.href = "www.google.com.tw";
+	        window.location.href = "itms-services://?action=download-manifest&url=https://yitungtech.com.tw/case/apps/ku/manifest368.plist";
+	    });
+
+	    clipboard.on('error', function(e) {
+	        console.log(e);
+	    });
+
+	    function onClickLink(elem){
+	        console.log('onClickLink');
+	        
+
+	    }
+	</script>
 </html>
