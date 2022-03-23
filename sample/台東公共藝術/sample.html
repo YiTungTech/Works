@@ -82,6 +82,7 @@
                 </div> -->
                 <div>
                     <button onclick="onClickLocation();">取得目前座標</button>
+                    <button onclick="onClickMoveCurrentLocation();">移動到目前座標</button>
                 </div>
                 <!-- <div class="d-flex align-items-center">
                     <p class="mb-0">移動 x, y 位置：</p><a class="js-panby m-1 btn btn-sm btn-outline-primary" href="#" data-times="1">x: 50, y: 50</a><a class="js-panby m-1 btn btn-sm btn-outline-primary" href="#" data-times="2">x: 100, y: 100</a><a class="js-panby m-1 btn btn-sm btn-outline-primary" href="#" data-times="3">x: 150, y: 150</a>
@@ -97,65 +98,72 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="dist/main.min.js?v=1.0.18"></script>
     <script type="text/javascript">
-
+        var e = L.map("map", { attributionControl: !0, zoomControl: !0 });
         //固定取得自己的座標
         document.addEventListener("DOMContentLoaded", function() {
-        var t = [24.9983469, 121.5810358];
-        var e = L.map("map", { attributionControl: !0, zoomControl: !0 });
-        
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(e);
-        var o = L.icon({ iconUrl: "https://letswritetw.github.io/letswrite-leaflet-osm-locate/dist/dot.svg", iconSize: [16, 16] }),
-            n = L.marker(t, { icon: o, title: "跟 <a> 的 title 一樣", opacity: 1 }).addTo(e);
+            var t = [24.9983469, 121.5810358];
+            
+            
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(e);
+            var o = L.icon({ iconUrl: "https://letswritetw.github.io/letswrite-leaflet-osm-locate/dist/dot.svg", iconSize: [16, 16] }),
+                n = L.marker(t, { icon: o, title: "跟 <a> 的 title 一樣", opacity: 1 }).addTo(e);
 
-        function a(t) {
-            var e = document.querySelectorAll(".js-panto");
-            Array.prototype.forEach.call(e, function(e) {
-                e.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    var o = e.target.dataset.to.split(","),
-                        n = e.target.textContent,
-                        a = document.getElementById("flyTo").checked;
-                    L.popup().setLatLng(o).setContent("".concat(n)).openOn(t), a ? t.flyTo(o) : t.panTo(o);
+            function a(t) {
+                var e = document.querySelectorAll(".js-panto");
+                Array.prototype.forEach.call(e, function(e) {
+                    e.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        var o = e.target.dataset.to.split(","),
+                            n = e.target.textContent,
+                            a = document.getElementById("flyTo").checked;
+                        L.popup().setLatLng(o).setContent("".concat(n)).openOn(t), a ? t.flyTo(o) : t.panTo(o);
+                    });
                 });
-            });
-        }
+            }
 
-        function c(t) {
-            var e = document.querySelectorAll(".js-panby");
-            Array.prototype.forEach.call(e, function(e) {
-                e.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    var o = 50 * e.target.dataset.times,
-                        n = [o, o];
-                    t.panBy(n);
+            function c(t) {
+                var e = document.querySelectorAll(".js-panby");
+                Array.prototype.forEach.call(e, function(e) {
+                    e.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        var o = 50 * e.target.dataset.times,
+                            n = [o, o];
+                        t.panBy(n);
+                    });
                 });
-            });
-        }
+            }
 
-        //台東美術館22.76475, 121.1503
-        //國際地標22.75321437727234, 121.16465302702785
-        //台東火車站22.79259,121.12333
-        //增加marker
-        const center = [22.79259, 121.12333];
-        const marker = L.marker(center, {
-          title: '從目前位置導航到台東火車站', // 跟 <a> 的 title 一樣
-          opacity: 1.0
-        }).addTo(e);
-        marker.bindPopup("<button onclick='onClickMarker(22.79259, 121.12333)'>從目前位置導航到台東火車站</button>").openPopup();
+            //台東美術館22.76475, 121.1503
+            //國際地標22.75321437727234, 121.16465302702785
+            //台東火車站22.79259,121.12333
+            //增加marker
+            var center = [22.79259, 121.12333];
+            var marker = L.marker(center, {
+              title: '從目前位置導航到台東火車站', // 跟 <a> 的 title 一樣
+              opacity: 1.0
+            }).addTo(e);
+            marker.bindPopup("<button onclick='onClickMarker(22.79259, 121.12333)'>從目前位置導航到台東火車站</button>").openPopup();
+
+            center = [22.76475, 121.1503];
+            marker = L.marker(center, {
+              title: '從目前位置導航到台東美術館', // 跟 <a> 的 title 一樣
+              opacity: 1.0
+            }).addTo(e);
+            marker.bindPopup("<button onclick='onClickMarker(22.76475, 121.1503)'>從目前位置導航到台東美術館</button>").openPopup();
 
 
-        e.locate({ setView: !0, watch: !0, maxZoom: 18, enableHighAccuracy: !0 }),
-            e.on("locationerror", function(o) {
-                console.log("e", o), window.alert("無法判斷您的所在位置，無法使用此功能。預設地點將為 台北市動物園"), e.setView(t, 18), a(e), c(e);
-            }),
-            e.on("locationfound", function(t) {
+            e.locate({ setView: !0, watch: false, maxZoom: 18, enableHighAccuracy: !0 }),
+                e.on("locationerror", function(o) {
+                    console.log("e", o), window.alert("無法判斷您的所在位置，無法使用此功能。預設地點將為 台北市動物園"), e.setView(t, 18), a(e), c(e);
+                }),
+                e.on("locationfound", function(t) {
 
-                // alert('您所在的位置經緯度' + t.latlng.lat + ',' + t.latlng.lng);
-                // console.log(t.latlng.lat);
-                // console.log(t.latlng.lng);
-                console.log("e", t), n.setLatLng(t.latlng), a(e), c(e);
-                currentLocation = t;
-            });
+                    // alert('您所在的位置經緯度' + t.latlng.lat + ',' + t.latlng.lng);
+                    // console.log(t.latlng.lat);
+                    // console.log(t.latlng.lng);
+                    console.log("e", t), n.setLatLng(t.latlng), a(e), c(e);
+                    currentLocation = t;
+                });
         });
 
         function onClickMarker(To經度, To緯度){
@@ -165,6 +173,10 @@
         
         function get路經規劃網址(From經度, From緯度, To經度, To緯度){
           return "https://www.openstreetmap.org/directions?from="+From經度+", "+From緯度+"&to="+To經度+", "+To緯度+"";
+        }
+
+        function onClickMoveCurrentLocation(){
+            e.flyTo([currentLocation.latlng.lat, currentLocation.latlng.lng]);
         }
 
         $(function(){
