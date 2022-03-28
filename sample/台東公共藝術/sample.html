@@ -142,14 +142,16 @@
               title: '從目前位置導航到台東火車站', // 跟 <a> 的 title 一樣
               opacity: 1.0
             }).addTo(e);
-            marker.bindPopup("<button onclick='onClickMarker(22.79259, 121.12333)'>從目前位置導航到台東火車站</button>").openPopup();
+            marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/362/medium_20211110091829099.jpg'><label>台東火車站</label><div><button onclick='onClickMarker("+center[0]+", "+center[1]+")'>導航</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/362\");'>詳細</button>").openPopup();
 
-            center = [22.76475, 121.1503];
-            marker = L.marker(center, {
-              title: '從目前位置導航到台東美術館', // 跟 <a> 的 title 一樣
-              opacity: 1.0
-            }).addTo(e);
-            marker.bindPopup("<button onclick='onClickMarker(22.76475, 121.1503)'>從目前位置導航到台東美術館</button>").openPopup();
+            
+
+            // center = [22.76475, 121.1503];
+            // marker = L.marker(center, {
+            //   title: '從目前位置導航到台東美術館', // 跟 <a> 的 title 一樣
+            //   opacity: 1.0
+            // }).addTo(e);
+            // marker.bindPopup("<button onclick='onClickMarker(22.76475, 121.1503)'>導航</button>").openPopup();
 
 
             e.locate({ setView: !0, watch: false, maxZoom: 18, enableHighAccuracy: !0 }),
@@ -168,6 +170,10 @@
 
         function onClickMarker(To經度, To緯度){
           window.open(get路經規劃網址(currentLocation.latlng.lat, currentLocation.latlng.lng, To經度, To緯度), '_blank');
+        }
+
+        function onClickDetail(url){
+            location.href = url;
         }
 
         
