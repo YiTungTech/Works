@@ -6,22 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>測試定位</title>
-    <link rel="canonical" href="https://letswrite.tw/leaflet-osm-locate/" />
-    <meta property="og:url" content="https://letswritetw.github.io/letswrite-leaflet-osm-locate/" />
-    <meta property="fb:app_id" content="911000986339138" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Let's Write" />
-    <meta property="og:title" content="OSM + Leaflet 學習筆記2：移動中心點、抓目前地點 - Augustus - Let's Write" />
-    <meta itemprop="name" content="OSM + Leaflet 學習筆記2：移動中心點、抓目前地點 - Augustus - Let's Write" />
-    <meta name="description" content="OSM + Leaflet 學習筆記2：移動中心點、抓目前地點" />
-    <meta property="og:description" content="OSM + Leaflet 學習筆記2：移動中心點、抓目前地點" />
-    <meta itemprop="description" content="OSM + Leaflet 學習筆記2：移動中心點、抓目前地點" />
-    <meta itemprop="image" content="https://letswritetw.github.io/letswrite-leaflet-osm-locate/fb.jpg?v=1.0.2" />
-    <meta property="og:image" content="https://letswritetw.github.io/letswrite-leaflet-osm-locate/fb.jpg?v=1.0.2" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="OSM + Leaflet 學習筆記2：移動中心點、抓目前地點" />
-    <link rel="shortcut icon" href="https://letswritetw.github.io/letswritetw/dist/img/logo_512.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="dist/style.min.css?v=1.0.2" />
@@ -36,7 +20,7 @@
     }
     </script>
     <!-- Google Tag Manager-->
-    <script>
+    <!-- <script>
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -49,14 +33,14 @@
         })(window, document, "script", "dataLayer", "GTM-PGQ9WQT");
 
 
-    </script>
+    </script> -->
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript)-->
-    <noscript>
+    <!-- <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    </noscript> -->
     <div class="container">
         <div class="row">
             <div class="col pt-5 text-center">
@@ -96,14 +80,11 @@
         </div>
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src="dist/main.min.js?v=1.0.18"></script>
     <script type="text/javascript">
         var e = L.map("map", { attributionControl: !0, zoomControl: !0 });
         //固定取得自己的座標
         document.addEventListener("DOMContentLoaded", function() {
             var t = [24.9983469, 121.5810358];
-            
-            
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(e);
             var o = L.icon({ iconUrl: "https://letswritetw.github.io/letswrite-leaflet-osm-locate/dist/dot.svg", iconSize: [16, 16] }),
                 n = L.marker(t, { icon: o, title: "跟 <a> 的 title 一樣", opacity: 1 }).addTo(e);
@@ -133,27 +114,6 @@
                 });
             }
 
-            //台東美術館22.76475, 121.1503
-            //國際地標22.75321437727234, 121.16465302702785
-            //台東火車站22.79259,121.12333
-            //增加marker
-            var center = [22.79259, 121.12333];
-            var marker = L.marker(center, {
-              title: '從目前位置導航到台東火車站', // 跟 <a> 的 title 一樣
-              opacity: 1.0
-            }).addTo(e);
-            marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/362/medium_20211110091829099.jpg'><label>台東火車站</label><div><button onclick='onClickMarker("+center[0]+", "+center[1]+")'>導航</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/362\");'>詳細</button>").openPopup();
-
-            
-
-            // center = [22.76475, 121.1503];
-            // marker = L.marker(center, {
-            //   title: '從目前位置導航到台東美術館', // 跟 <a> 的 title 一樣
-            //   opacity: 1.0
-            // }).addTo(e);
-            // marker.bindPopup("<button onclick='onClickMarker(22.76475, 121.1503)'>導航</button>").openPopup();
-
-
             e.locate({ setView: !0, watch: false, maxZoom: 18, enableHighAccuracy: !0 }),
                 e.on("locationerror", function(o) {
                     console.log("e", o), window.alert("無法判斷您的所在位置，無法使用此功能。預設地點將為 台北市動物園"), e.setView(t, 18), a(e), c(e);
@@ -166,9 +126,33 @@
                     console.log("e", t), n.setLatLng(t.latlng), a(e), c(e);
                     currentLocation = t;
                 });
+
+
+            //台東美術館22.76475, 121.1503
+            //國際地標22.75321437727234, 121.16465302702785
+            //台東火車站22.79259,121.12333
+            //增加marker
+            var center = [22.79259, 121.12333];
+            var marker = L.marker(center, {
+              title: '台東火車站', // 跟 <a> 的 title 一樣
+              opacity: 1.0
+            }).addTo(e);
+            marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/362/medium_20211110091829099.jpg'><label>台東火車站</label><div><button onclick='onClickMarker導航("+center[0]+", "+center[1]+")'>導航</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/362\");'>詳細</button>").openPopup();
+
+
+
+            // center = [22.76475, 121.1503];
+            // marker = L.marker(center, {
+            //   title: '從目前位置導航到台東美術館', // 跟 <a> 的 title 一樣
+            //   opacity: 1.0
+            // }).addTo(e);
+            // marker.bindPopup("<button onclick='onClickMarker導航(22.76475, 121.1503)'>導航</button>").openPopup();
+
+
+            
         });
 
-        function onClickMarker(To經度, To緯度){
+        function onClickMarker導航(To經度, To緯度){
           window.open(get路經規劃網址(currentLocation.latlng.lat, currentLocation.latlng.lng, To經度, To緯度), '_blank');
         }
 
