@@ -134,11 +134,20 @@
             //增加marker
             var title = '';
             var center = [22.79259, 121.12333];
-            var marker = L.marker(center, {
-                title: '台東火車站', // 跟 <a> 的 title 一樣
-                opacity: 1.0
-            }).addTo(e);
-            marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/362/medium_20211110091829099.jpg'><label>台東火車站</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/362\");'>詳細</button>").openPopup();
+            var marker;
+            //火車站圖片不正確，先隱藏
+            // var marker = L.marker(center, {
+            //     title: '台東火車站', // 跟 <a> 的 title 一樣
+            //     opacity: 1.0
+            // }).addTo(e);
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/362/medium_20211110091829099.jpg'><label>台東火車站</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/362\");'>詳細</button>").openPopup();
+
+            // center = [22.76475, 121.1503];
+            // marker = L.marker(center, {
+            //     title: '台東美術館', // 跟 <a> 的 title 一樣
+            //     opacity: 1.0
+            // }).addTo(e);
+            // marker.bindPopup("<button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button>").openPopup();
 
             title = '有空來坐坐';
             center = [22.751152, 121.148080];
@@ -214,15 +223,6 @@
             center = [22.807151, 121.196492];
             marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
             marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/68/small_20210312132041442.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/68\");'>詳細</button>").openPopup();
-
-
-            center = [22.76475, 121.1503];
-            marker = L.marker(center, {
-                title: '台東美術館', // 跟 <a> 的 title 一樣
-                opacity: 1.0
-            }).addTo(e);
-            marker.bindPopup("<button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button>").openPopup();
-
 
             
             //2019
