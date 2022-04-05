@@ -477,7 +477,7 @@
 
                 // L.marker(pos).addTo(map); //reference marker (for checking position)
                 marker = L.marker(pos, { icon: icon }).addTo(map);
-                marker.bindPopup("<div class='pop_font'><div><img src='" + img + "''><div><div class='pop_title'>" + icontext + "</div><button class='pop_navigation' onclick='onClickMarker導航(" + row.lat + ", " + row.lon + ")'>路徑規劃</button> <button class='pop_details' onclick='onClickDetail(\"" + link + "\");'>詳細</button></div>");
+                marker.bindPopup("<div class='pop_font'><div><img src='" + img + "''><div><div class='pop_title'>" + icontext + "</div><button class='pop_navigation' onclick='onClickMarker導航(" + row.lat + ", " + row.lon + ")'>路徑規劃</button> <button class='pop_details' onclick='onClickDetail(\"" + link + "\");'>詳細資訊</button></div>");
 
             });
 
