@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="dist/style.min.css?v=1.0.2" />
 
-    <head>
+
+    <!--字型-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
     <style type="text/css">
         /*html,
         body {
@@ -68,21 +73,194 @@
             opacity: 0.5;
         }
 
-        .map-label.redborder>.map-label-content {
+        .map-label.redborder > .map-label-content {
             border-color: #e00;
         }
 
-        .map-label.redborder>.map-label-arrow {
+        .map-label.redborder > .map-label-arrow {
             border-top-color: #e00;
         }
 
-        .map-label.redbackground>.map-label-content {
+        .map-label.redbackground > .map-label-content {
             white-space: default;
             color: #fff;
             background-color: #e00;
         }
-        </style>
-    </head>
+
+
+
+        * {
+            font-family: 'Noto Sans TC';
+            font-style: normal;
+            font-weight: 400;
+            /*font-size: 14px;*/
+            line-height: 20px;
+            color: #6B7280;
+        }
+
+        .banner {
+            width: 1296px;
+        }
+
+        /*第一彈出框*/
+        .first_pop {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 36px 40px;
+            width: 545px;
+            height: 116px;
+            left: 1px;
+            top: 1px;
+            /*置中*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /*置頂*/
+            z-index: 999;
+            /* /Gray / White */
+            background: #FFFFFF;
+            /* Stroke/light */
+            border: 1px solid #DEE2E6;
+            /* Shadow / Small */
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 20px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+        }
+
+        .toTPA {
+            padding: 14px 20px;
+            width: 220px;
+            background: #FFFFFF;
+            border: 1px solid #4F4F4F;
+            box-sizing: border-box;
+            border-radius: 8px;
+            margin: 0px 24px;
+        }
+
+        .stay {
+            padding: 14px 20px;
+            width: 220px;
+            background: #4F4F4F;
+            border-radius: 8px;
+            margin: 0px 24px;
+            color: #F5F5F5;
+        }
+
+        .pop_font img {
+            border-radius: 12px;
+            width:270px;
+        }
+        /*測試按鈕*/
+        .test_button01 {
+            padding: 8px 12px;
+            margin-right: 16px;
+            background: #F0FDFA;
+            border: 1px solid #CCFBF1;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .test_button02 {
+            padding: 8px 12px;
+            margin-right: 16px;
+            background: #F9FAFB;
+            border: 1px solid #6B7280;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        /*彈出框按鈕*/
+        .pop_font {
+            font-size: 14px;
+        }
+
+        .pop_title {
+            margin: 10px 0;
+        }
+
+        .pop_navigation {
+            padding: 14px 20px;
+            background: #FFFFFF;
+            border: 1px solid #4F4F4F;
+            border-radius: 8px;
+            margin: 0px 24px;
+        }
+
+        .pop_details {
+            color: #F5F5F5;
+            padding: 14px 20px;
+            background: #4F4F4F;
+            border-radius: 8px;
+            margin: 0px 24px;
+        }
+        /*年分*/
+        .y2019 {
+            padding: 4px;
+            background: #FEE2E2;
+            border-radius: 4px;
+        }
+
+        .y2020 {
+            padding: 4px;
+            background: #FEF9C3;
+            border-radius: 4px;
+        }
+
+        .y2021 {
+            padding: 4px;
+            background: #DBEAFE;
+            border-radius: 4px;
+        }
+
+        /*rwd*/
+        @media screen and (max-width: 400px) {
+            .banner {
+                width: 375px;
+            }
+
+            .first_pop {
+                display: block;
+                width: 300.5px;
+                height: 219px;
+                left: 1px;
+                top: 1px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .toTPA {
+                height: 63px;
+                margin: 0;
+            }
+
+            .stay {
+                height: 63px;
+                margin: 0;
+                margin-top: 24px;
+            }
+
+            .pop_navigation {
+                display: block;
+                margin: auto;
+                width: 200px;
+            }
+
+            .pop_details {
+                display: block;
+                margin: auto;
+                margin-top:16px;
+                width: 200px;
+            }
+
+            .pop_font img {
+                width: 200px;
+            }
+        }
+    </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -116,12 +294,21 @@
     <!-- <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PGQ9WQT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript> -->
+    <div id="first_pop" class="first_pop">
+        <button class='toTPA' onclick="location.href='https://tpa.ccl.ttct.edu.tw/'">前往公共藝術網</button>
+        <button class='stay' onclick='onClickStay();'>觀光公共藝術</button>
+    </div>
+
+
     <div class="container">
-        <div class="row">
-            <div class="col pt-5 text-center">
-                <!-- <h1>Leaflet.js 移動中心點、抓目前地點</h1> -->
-                <!-- <h6>筆記文：<a href="https://letswrite.tw/leaflet-osm-basic/">Let's Write</a></h6> -->
-            </div>
+        <!--<div class="row">
+            <div class="col pt-5 text-center">-->
+        <!-- <h1>Leaflet.js 移動中心點、抓目前地點</h1> -->
+        <!-- <h6>筆記文：<a href="https://letswrite.tw/leaflet-osm-basic/">Let's Write</a></h6> -->
+        <!--</div>
+        </div>-->
+        <div class="col">
+            <img class="banner" src="./images/banner.png" alt="在藝術的路上遇見..." />
         </div>
 
         <div class="row">
@@ -130,14 +317,16 @@
             </div>
         </div>
 
-        <hr />
-        <div class="row mb-3">
+
+        <div class="row mb-3" style="margin-top:40px">
             <div class="col">
-                測試按鈕
-                <div class="d-flex align-items-center">
-                    <p class="mb-0">移動到指定座標：</p>
-                    <a class="js-panto m-1 btn btn-sm btn-outline-primary" href="#" data-to="22.76475, 121.1503">台東美術館</a>
-                    <a class="js-panto m-1 btn btn-sm btn-outline-primary" href="#" data-to="22.79259, 121.12333">台東火車站</a>
+                測試按鈕 :
+                <div class="d-flex align-items-center" style="margin:16px 0">
+                    <!--<p class="mb-0">移動到指定座標：</p>-->
+                    <a class="js-panto test_button01" href="#" data-to="22.76475, 121.1503" style="text-decoration:none;">台東美術館</a>
+                    <a class="js-panto test_button01" href="#" data-to="22.79259, 121.12333" style="text-decoration:none;">台東火車站</a>
+                    <button class="test_button02" onclick="onClickLocation();">取得目前座標</button>
+                    <button class="test_button02" onclick="onClickMoveCurrentLocation();">移動到目前座標</button>
                     <div class="form-check form-switch mr-2 ml-3" style="visibility: hidden;">
                         <input class="form-check-input" id="flyTo" type="checkbox" />
                         <label class="form-check-label" for="flyTo">縮放效果</label>
@@ -147,27 +336,23 @@
                     規劃路徑
                     <a class="m-1 btn btn-sm btn-outline-primary" href="https://www.openstreetmap.org/directions?from=22.76475, 121.1503&to=22.75321437727234, 121.16465302702785" target="_blank">台東美術館>國際地標</a>
                 </div> -->
-                <div>
-                    <button onclick="onClickLocation();">取得目前座標</button>
-                    <button onclick="onClickMoveCurrentLocation();">移動到目前座標</button>
-                </div>
                 <!-- <div class="d-flex align-items-center">
                     <p class="mb-0">移動 x, y 位置：</p><a class="js-panby m-1 btn btn-sm btn-outline-primary" href="#" data-times="1">x: 50, y: 50</a><a class="js-panby m-1 btn btn-sm btn-outline-primary" href="#" data-times="2">x: 100, y: 100</a><a class="js-panby m-1 btn btn-sm btn-outline-primary" href="#" data-times="3">x: 150, y: 150</a>
                 </div> -->
             </div>
         </div>
-        
+
     </div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script type="text/javascript">
         var 經緯度_台東美術館 = [22.76475, 121.1503];//台東美術館22.76475, 121.1503
         var defaultZoom = 10;
-        var map = L.map("map", { attributionControl: !0, zoomControl: !0, center: 經緯度_台東美術館,zoom: defaultZoom });
+        var map = L.map("map", { attributionControl: !0, zoomControl: !0, center: 經緯度_台東美術館, zoom: defaultZoom });
 
-        
+
         //固定取得自己的座標
         document.addEventListener("DOMContentLoaded", function () {
-            
+
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
             var ICON_目前位置 = L.icon({ iconUrl: "https://letswritetw.github.io/letswrite-leaflet-osm-locate/dist/dot.svg", iconSize: [16, 16] }),
                 n = L.marker(經緯度_台東美術館, { icon: ICON_目前位置, title: "跟 <a> 的 title 一樣", opacity: 1 }).addTo(map);
@@ -221,7 +406,7 @@
             var marker;
             var icon;
 
-            
+
             // data = [
             //     { content: '自然 原始 傳統 衍生對話', lat: 22.79259, lon: 121.12333 },
             //     // { state: 'inactive', content: 'This is inactive', lat: 22.79459, lon: 121.12333 },
@@ -231,25 +416,52 @@
 
 
             data = [
-                { state: '', content: '空間實驗共感計畫第一號', lat: 22.760176, lon: 121.091927, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/129/small_20210313022253221.jpg' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/129'},
-                { state: '', content: '有空來坐坐', lat: 22.751152, lon: 121.148080, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/177/small_20210313041643394.jpg' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/177'},
                 //2019作品
-                { state: 'redborder', content: '[2019]旅行在50步的空間', lat: 23.0204200, lon: 121.3249706, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/214/small_20210313064726938.jpg' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/214'},
-                { state: 'redborder', content: '[2019]振興壁畫 阿美族傳說–10個太陽', lat: 23.0426588, lon: 121.1949693, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/229/small_20210313081813805.JPG' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/229'},
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 空間實驗共感計畫第一號</div>', lat: 22.760176, lon: 121.091927, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/129/small_20210313022253221.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/129' },
+
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 旅行在50步的空間</div>', lat: 23.0204200, lon: 121.3249706, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/214/small_20210313064726938.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/214' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 振興壁畫 阿美族傳說–10個太陽</div>', lat: 23.0426588, lon: 121.1949693, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/229/small_20210313081813805.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/229' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 自然 原始 傳統 衍生對話</div>', lat: 22.748949, lon: 121.152748, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/178/small_20210313041748466.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/178' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 背影</div>', lat: 22.751547, lon: 121.147469, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/176/small_20210313041530675.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/176' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 小力量</div>', lat: 22.752253, lon: 121.145939, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/175/small_20210313041423785.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/175' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 千年守護</div>', lat: 22.806749, lon: 121.196902, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/145/small_20210313024612765.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/145' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 大同郵局鴿子</div>', lat: 22.752853, lon: 121.153951, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/66/small_20210312123155067.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/66' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 水下深藍11米的祝福</div>', lat: 22.752851, lon: 121.153952, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/65/small_20210312122947370.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/65' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 國際地標-向陽樹</div>', lat: 22.74923, lon: 121.15753, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/50/small_20210312060542191.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/50' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 落葉歸根</div>', lat: 22.738000, lon: 121.069028, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/154/small_20210313034640190.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/154' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 光、合、作用</div>', lat: 22.738000, lon: 121.069028, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/89/small_20210312140333502.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/89' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> Wishing Coin許願幣</div>', lat: 22.793660, lon: 121.123403, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/71/small_20210312132534077.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/71' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> VOLANGAT銀盔</div>', lat: 22.793134, lon: 121.123917, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/70/small_20210312132347364.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/70' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 等待漲潮－阿公的魚簍<div>', lat: 23.1297024208562, lon: 121.40081324040843, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/341/small_20211111163041933.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/341' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 艷陽下的綻放<div>', lat: 22.807151, lon: 121.196492, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/68/small_20210312132041442.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/68' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 斗笠<div>', lat: 23.095513, lon: 121.218334, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/230/small_20210313082152166.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/230' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 在河之間<div>', lat: 23.107131, lon: 121.193461, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/231/small_20210313082304774.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/231' },
+                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 自然療癒<div>', lat: 23.095482, lon: 121.215681, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/232/small_20210313082407422.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/232' },
+
+
                 //2020作品
-                { state: 'redbackground', content: '[2020]我想要有個家', lat: 23.12002654980241, lon: 121.22403659769508, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/348/small_20211111094438072.jpg' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/214'},
-                { state: 'redbackground', content: '[2020]振興壁畫 阿美族傳說–10個太陽', lat: 23.0426588, lon: 121.1949693, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/229/small_20210313081813805.JPG' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/348'},
+                { state: '', content: '<div class="pop_font"><label class="y2020">2020</label> 我想要有個家<div>', lat: 23.12002654980241, lon: 121.22403659769508, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/348/small_20211111094438072.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/348' },
+                { state: '', content: '<div class="pop_font"><label class="y2020">2020</label> 何時<div>', lat: 23.120141784214837, lon: 121.22429456385626, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/349/small_20211111092908148.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/349' },
+                { state: '', content: '<div class="pop_font"><label class="y2020">2020</label> 溯土Revert to Earth<div>', lat: 23.12474819805779, lon: 121.21972271520636, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/350/small_20211110151306000.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/350' },
+                { state: '', content: '<div class="pop_font"><label class="y2020">2020</label> 拾火Kalo’orip<div>', lat: 23.12497996526222, lon: 121.21940008914386, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/351/small_20211110150929837.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/351' },
+                { state: '', content: '<div class="pop_font"><label class="y2020">2020</label> 供給與需求<div>', lat: 23.125048568251945, lon: 121.21941766460687, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/352/small_20211110150648084.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/352' },
+
+
+
                 //2021作品
-                { state: 'redborder', content: '[2021]療癒系列', lat: 23.041170000332418, lon: 121.17641641622309, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/357/small_20211110101729813.jpg' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/357'},
-                { state: 'redborder', content: '[2021]蛻變前的等待', lat: 23.04408477348909, lon: 121.17730567378085, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/358/small_20211110101343066.jpg' ,link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/358'},
+                { state: '', content: '<div class="pop_font"><label class="y2021">2021</label> 療癒系列<div>', lat: 23.041170000332418, lon: 121.17641641622309, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/357/small_20211110101729813.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/357' },
+                { state: '', content: '<div class="pop_font"><label class="y2021">2021</label> 蛻變前的等待<div>', lat: 23.04408477348909, lon: 121.17730567378085, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/358/small_20211110101343066.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/358' },
+                { state: '', content: '<div class="pop_font"><label class="y2021">2021</label> 雲朵製造所<div>', lat: 23.040585419463223, lon: 121.17430410742662, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/359/small_20211110101131334.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/359' },
+                { state: '', content: '<div class="pop_font"><label class="y2021">2021</label> 穹頂上有花<div>', lat: 22.939326565363256, lon: 121.15198768782173, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/360/small_20211110100819622.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/360' },
+                { state: '', content: '<div class="pop_font"><label class="y2021">2021</label> 粉紅河馬<div>', lat: 22.931328602371874, lon: 121.15613336862421, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/361/small_20211110100557628.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/361' }
 
 
-                
+
             ];
 
 
             //帶有文字的icon
-            data.forEach(function(row) {
+            data.forEach(function (row) {
                 var pos = new L.LatLng(row.lat, row.lon);
                 var icontext = row.content;
                 var instanceclass = row.state || '';
@@ -263,7 +475,7 @@
 
                 // L.marker(pos).addTo(map); //reference marker (for checking position)
                 marker = L.marker(pos, { icon: icon }).addTo(map);
-                marker.bindPopup("<div>"+icontext+"</div><div><img width='200' src='"+img+"''><div><button onclick='onClickMarker導航(" + row.lat + ", " + row.lon + ")'>路徑規劃</button> <button onclick='onClickDetail(\""+link+"\");'>詳細</button>");
+                marker.bindPopup("<div class='pop_font'><div><img src='" + img + "''><div><div class='pop_title'>" + icontext + "</div><button class='pop_navigation' onclick='onClickMarker導航(" + row.lat + ", " + row.lon + ")'>路徑規劃</button> <button class='pop_details' onclick='onClickDetail(\"" + link + "\");'>詳細</button></div>");
 
             });
 
@@ -300,7 +512,7 @@
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
             // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/145/small_20210313024612765.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/145\");'>詳細</button>");
 
-            
+
 
             // title = '大同郵局鴿子';
             // center = [22.752853, 121.153951];
@@ -347,13 +559,13 @@
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
             // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/68/small_20210312132041442.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/68\");'>詳細</button>");
 
-            
+
             // //2019
             // var icon2019 = L.icon({
             //     iconUrl: 'https://cdn-icons-png.flaticon.com/512/727/727606.png',
             //     iconSize: [41, 41]
             // });
-   
+
             // title = '旅行在50步的空間';
             // center = [23.0204200, 121.3249706];
             // marker = L.marker(center, { icon: icon2019, title: title, opacity: 1.0 }).addTo(e);
@@ -449,7 +661,7 @@
         }
 
         function onClickDetail(url) {
-            window.open(url,'_blank');
+            window.open(url, '_blank');
         }
 
 
@@ -459,6 +671,10 @@
 
         function onClickMoveCurrentLocation() {
             e.flyTo([currentLocation.latlng.lat, currentLocation.latlng.lng]);
+        }
+
+        function onClickStay() {
+            $('#first_pop').hide();
         }
 
         $(function () {
