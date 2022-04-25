@@ -185,7 +185,7 @@
             background: #FFFFFF;
             border: 1px solid #4F4F4F;
             border-radius: 8px;
-            margin: 0px 24px;
+            margin: 12px 24px;
         }
 
         .pop_details {
@@ -193,7 +193,7 @@
             padding: 14px 20px;
             background: #4F4F4F;
             border-radius: 8px;
-            margin: 0px 24px;
+            margin: 12px 24px;
         }
         /*年分*/
         .y2019 {
@@ -249,6 +249,7 @@
                 display: block;
                 margin: auto;
                 width: 200px;
+                margin-top:16px;
             }
 
             .pop_details {
@@ -477,7 +478,10 @@
 
                 // L.marker(pos).addTo(map); //reference marker (for checking position)
                 marker = L.marker(pos, { icon: icon }).addTo(map);
-                marker.bindPopup("<div class='pop_font'><div><img src='" + img + "''><div><div class='pop_title'>" + icontext + "</div><button class='pop_navigation' onclick='onClickMarker導航(" + row.lat + ", " + row.lon + ")'>路徑規劃</button> <button class='pop_details' onclick='onClickDetail(\"" + link + "\");'>詳細資訊</button></div>");
+                marker.bindPopup("<div class='pop_font'><div><img src='" + img + "''><div><div class='pop_title'>" + icontext + "</div>"+
+                    "<button class='pop_navigation' onclick='onClickMarker路徑規劃(" + row.lat + ", " + row.lon + ")'>路徑規劃</button>"+
+                    "<button class='pop_navigation' onclick='onClickMarker導航(" + row.lat + ", " + row.lon + ")'>　導航　</button>"+
+                    "<button class='pop_details' onclick='onClickDetail(\"" + link + "\");'>詳細資訊</button></div>");
 
             });
 
@@ -487,79 +491,79 @@
             // title = '空間實驗共感計畫第一號';
             // center = [22.760176, 121.091927];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/129/small_20210313022253221.jpg''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/129\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/129/small_20210313022253221.jpg''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/129\");'>詳細</button>");
 
             // title = '有空來坐坐';
             // center = [22.751152, 121.148080];
             // marker = L.marker(center, {title: title,opacity: 1.0}).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/177/small_20210313041643394.jpg'><label>"+title+"</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/177\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/177/small_20210313041643394.jpg'><label>"+title+"</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/177\");'>詳細</button>");
 
             // title = '自然 原始 傳統 衍生對話';
             // center = [22.748949, 121.152748];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/178/small_20210313041748466.JPG'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/178\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/178/small_20210313041748466.JPG'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/178\");'>詳細</button>");
 
             // title = '背影';
             // center = [22.751547, 121.147469];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/176/small_20210313041530675.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/176\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/176/small_20210313041530675.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/176\");'>詳細</button>");
 
             // title = '小力量';
             // center = [22.752253, 121.145939];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/175/small_20210313041423785.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/175\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/175/small_20210313041423785.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/175\");'>詳細</button>");
 
             // title = '千年守護';
             // center = [22.806749, 121.196902];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/145/small_20210313024612765.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/145\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/145/small_20210313024612765.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/145\");'>詳細</button>");
 
 
 
             // title = '大同郵局鴿子';
             // center = [22.752853, 121.153951];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/66/small_20210312123155067.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/66\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/66/small_20210312123155067.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/66\");'>詳細</button>");
 
             // title = '水下深藍11米的祝福';
             // center = [22.752853, 121.153951];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/65/small_20210312122947370.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/65\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/65/small_20210312122947370.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/65\");'>詳細</button>");
 
             // title = '國際地標-向陽樹';
             // center = [22.74923, 121.15753];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/50/small_20210312060542191.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/50\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/50/small_20210312060542191.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/50\");'>詳細</button>");
 
             // title = '落葉歸根';
             // center = [22.738000, 121.069028];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/154/small_20210313034640190.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/154\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/154/small_20210313034640190.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/154\");'>詳細</button>");
 
             // title = '光、合、作用';
             // center = [22.763889, 121.151111];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/89/small_20210312140333502.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/89\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/89/small_20210312140333502.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/89\");'>詳細</button>");
 
             // title = 'Wishing Coin許願幣';
             // center = [22.793660, 121.123403];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/71/small_20210312132534077.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/71\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/71/small_20210312132534077.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/71\");'>詳細</button>");
 
             // title = 'VOLANGAT銀盔';
             // center = [22.793134, 121.123917];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/70/small_20210312132347364.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/70\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/70/small_20210312132347364.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/70\");'>詳細</button>");
 
             // title = '等待漲潮－阿公的魚簍';
             // center = [23.1297024208562, 121.40081324040843];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/341/small_20211111163041933.jpg''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/341\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/341/small_20211111163041933.jpg''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/341\");'>詳細</button>");
 
             // title = '艷陽下的綻放';
             // center = [22.807151, 121.196492];
             // marker = L.marker(center, { title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/68/small_20210312132041442.JPG''><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/68\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/68/small_20210312132041442.JPG''><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/68\");'>詳細</button>");
 
 
             // //2019
@@ -571,27 +575,27 @@
             // title = '旅行在50步的空間';
             // center = [23.0204200, 121.3249706];
             // marker = L.marker(center, { icon: icon2019, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/214/small_20210313064726938.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/214\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/214/small_20210313064726938.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/214\");'>詳細</button>");
 
             // title = '振興壁畫 阿美族傳說–10個太陽';
             // center = [23.0426588, 121.1949693];
             // marker = L.marker(center, { icon: icon2019, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/229/small_20210313081813805.JPG'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/229\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/229/small_20210313081813805.JPG'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/229\");'>詳細</button>");
 
             // title = '斗笠';
             // center = [23.095513, 121.218334];
             // marker = L.marker(center, { icon: icon2019, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/230/small_20210313082152166.JPG'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/230\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/230/small_20210313082152166.JPG'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/230\");'>詳細</button>");
 
             // title = '在河之間';
             // center = [23.107131, 121.193461];
             // marker = L.marker(center, { icon: icon2019, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/231/small_20210313082304774.JPG'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/231\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/231/small_20210313082304774.JPG'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/231\");'>詳細</button>");
 
             // title = '自然療癒';
             // center = [23.095482, 121.215681];
             // marker = L.marker(center, { icon: icon2019, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/232/small_20210313082407422.JPG'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/232\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/232/small_20210313082407422.JPG'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/232\");'>詳細</button>");
 
 
             // //2020
@@ -603,27 +607,27 @@
             // title = '我想要有個家';
             // center = [23.12002654980241, 121.22403659769508];
             // marker = L.marker(center, { icon: icon2020, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/348/small_20211111094438072.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/348\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/348/small_20211111094438072.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/348\");'>詳細</button>");
 
             // title = '何時';
             // center = [23.120141784214837, 121.22429456385626];
             // marker = L.marker(center, { icon: icon2020, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/349/small_20211111092908148.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/349\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/349/small_20211111092908148.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/349\");'>詳細</button>");
 
             // title = '溯土Revert to Earth';
             // center = [23.12474819805779, 121.21972271520636];
             // marker = L.marker(center, { icon: icon2020, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/350/small_20211110151306000.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/350\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/350/small_20211110151306000.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/350\");'>詳細</button>");
 
             // title = '拾火Kalo’orip';
             // center = [23.12497996526222, 121.21940008914386];
             // marker = L.marker(center, { icon: icon2020, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/351/small_20211110150929837.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/351\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/351/small_20211110150929837.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/351\");'>詳細</button>");
 
             // title = '供給與需求';
             // center = [23.125048568251945, 121.21941766460687];
             // marker = L.marker(center, { icon: icon2020, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/352/small_20211110150648084.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/352\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/352/small_20211110150648084.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/352\");'>詳細</button>");
 
             // //2021
             // var icon2021 = L.icon({
@@ -634,32 +638,36 @@
             // title = '療癒系列';
             // center = [23.041170000332418, 121.17641641622309];
             // marker = L.marker(center, { icon: icon2021, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/357/small_20211110101729813.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/357\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/357/small_20211110101729813.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/357\");'>詳細</button>");
 
             // title = '蛻變前的等待';
             // center = [23.04408477348909, 121.17730567378085];
             // marker = L.marker(center, { icon: icon2021, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/358/small_20211110101343066.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/358\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/358/small_20211110101343066.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/358\");'>詳細</button>");
 
             // title = '雲朵製造所';
             // center = [23.040585419463223, 121.17430410742662];
             // marker = L.marker(center, { icon: icon2021, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/359/small_20211110101131334.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/359\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/359/small_20211110101131334.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/359\");'>詳細</button>");
 
             // title = '穹頂上有花';
             // center = [22.939326565363256, 121.15198768782173];
             // marker = L.marker(center, { icon: icon2021, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/360/small_20211110100819622.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/360\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/360/small_20211110100819622.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/360\");'>詳細</button>");
 
             // title = '粉紅河馬';
             // center = [22.931328602371874, 121.15613336862421];
             // marker = L.marker(center, { icon: icon2021, title: title, opacity: 1.0 }).addTo(e);
-            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/361/small_20211110100557628.jpg'><label>" + title + "</label><div><button onclick='onClickMarker導航(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/361\");'>詳細</button>");
+            // marker.bindPopup("<div><img width='200' src='https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/361/small_20211110100557628.jpg'><label>" + title + "</label><div><button onclick='onClickMarker路徑規劃(" + center[0] + ", " + center[1] + ")'>路徑規劃</button> <button onclick='onClickDetail(\"https://tpa.ccl.ttct.edu.tw/Arts/Details/361\");'>詳細</button>");
 
         });
 
-        function onClickMarker導航(To經度, To緯度) {
+        function onClickMarker路徑規劃(To經度, To緯度) {
             window.open(get路經規劃網址(currentLocation.latlng.lat, currentLocation.latlng.lng, To經度, To緯度), '_blank');
+        }
+
+        function onClickMarker導航(To經度, To緯度) {
+            window.open("https://www.google.com/maps/search/?api=1&query="+To經度+"%2C"+To緯度, '_blank');
         }
 
         function onClickDetail(url) {
