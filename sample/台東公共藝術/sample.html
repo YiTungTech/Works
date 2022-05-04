@@ -663,6 +663,12 @@
         });
 
         function onClickMarker路徑規劃(To經度, To緯度) {
+            
+            if(currentLocation === undefined){
+                window.open(get路經規劃網址(經緯度_台東美術館[0], 經緯度_台東美術館[1], To經度, To緯度), '_blank');
+                return;
+            }
+            
             window.open(get路經規劃網址(currentLocation.latlng.lat, currentLocation.latlng.lng, To經度, To緯度), '_blank');
         }
 
