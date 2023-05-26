@@ -224,6 +224,15 @@
             border-radius: 4px;
         }
 
+        .group-layer{
+            display: inline-flex; 
+            padding: 30px;
+        }
+
+        .group-layer > div{
+            padding: 10px;
+        }
+
         /*rwd*/
         @media screen and (max-width: 768px) {
             #map {
@@ -320,6 +329,26 @@
         <div class="col">
             <img class="banner" src="./images/banner.png?v=1" alt="在藝術的路上遇見..." />
         </div>
+
+        <div class="group-layer">
+            <div>
+                
+                <input type="checkbox" value="y2019" onclick="onClickLayer(this);" checked>
+                <label>2019</label>
+            </div>
+            <div>
+                
+                <input type="checkbox" value="TEST" onclick="onClickLayer(this);" checked>
+                <label>南迴藝術季作品</label>
+            </div>
+            <div>
+                
+                <input type="checkbox" value="y2020" onclick="onClickLayer(this);" checked>
+                <label>2020</label>
+            </div>    
+        </div>
+        
+
 
         <div class="row">
             <div class="col">
@@ -427,7 +456,7 @@
 
             data = [
                 //2019作品
-                { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 空間實驗共感計畫第一號</div>', lat: 22.760176, lon: 121.091927, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/129/small_20210313022253221.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/129' },
+                { state: '', content: '<div class="pop_font"><label class="y2019 TEST">2019</label> 空間實驗共感計畫第一號</div>', lat: 22.760176, lon: 121.091927, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/129/small_20210313022253221.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/129' },
 
                 { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 旅行在50步的空間</div>', lat: 23.0204200, lon: 121.3249706, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/214/small_20210313064726938.jpg', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/214' },
                 { state: '', content: '<div class="pop_font"><label class="y2019">2019</label> 振興壁畫 阿美族傳說–10個太陽</div>', lat: 23.0426588, lon: 121.1949693, img: 'https://tpa.ccl.ttct.edu.tw/download/arts_upload_file/229/small_20210313081813805.JPG', link: 'https://tpa.ccl.ttct.edu.tw/Arts/Details/229' },
@@ -704,6 +733,16 @@
 
         function onClickStay() {
             $('#first_pop').hide();
+        }
+
+        function onClickLayer(elem){
+            if(elem.checked){
+                $('.'+elem.value).parent().parent().parent().show();
+                console.log('checked');
+            }else{
+                $('.'+elem.value).parent().parent().parent().hide();
+                console.log('unchecked');
+            }
         }
 
         $(function () {
