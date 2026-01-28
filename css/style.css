@@ -427,7 +427,7 @@ header {
     background-color: #4ba1e2;
     color: #ffffff;
     font-size: 0.2em;
-    padding: 1px 5px;
+    padding: 1px 5px 2px 5px;
     border-radius: 6px; /* 標籤圓角 */
     font-weight: 500;
 }
@@ -455,7 +455,7 @@ header {
     position: relative;
     /* 重要: 為了讓有線條和沒線條的文字對齊，統一左邊縮排 */
     padding-left: 35px;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
     /* 針對有 .with-line 的項目加上藍色橫線 */
@@ -753,9 +753,14 @@ header {
     /* 服務網格：3欄 → 2欄 */
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 50px;
     }
-
+    .services_box {
+        max-width: 615px;
+    }
+    .case-wrapper {
+        padding: 55px 50px;
+    }
     .services_box {
         padding: 0;
     }
